@@ -1,0 +1,54 @@
+@import "variables.css";
+@import "navbar.css";
+@import "post.css";
+@import "menus.css";
+@import "normalize.css";
+
+body {
+    font-family: i8sans;
+    font-size: 16px;
+}
+
+@font-face {
+    font-family: i8sans;
+    src: url("/files/fonts/P22UndergroundCYProBook.woff") format("woff"), url("/fonts/P22UndergroundCYProBook.svg") format("svg");
+    font-weight: 400;
+    font-style: normal
+}
+
+@font-face {
+    font-family: i8sans;
+    src: url("/files/fonts/P22UndergroundHeavy.woff") format("woff"), url("/fonts/P22UndergroundHeavy.otf") format("opentype");
+    font-weight: 700;
+    font-style: normal
+}
+
+@font-face {
+    font-family: i8serif;
+    src: local("Gregor"), url("/fonts/GregorIT.woff") format("woff"), url("/fonts/GregorIT.ttf") format("truetype"), url("/fonts/GregorIT.svg") format("svg");
+    font-weight: 400;
+    font-style: italic
+}
+
+@font-face {
+    font-family: i8serif;
+    src: local("Gregor"), url("/fonts/Gregor.woff") format("woff"), url("/fonts/Gregor.ttf") format("truetype"), url("/fonts/Gregor.svg") format("svg");
+    font-weight: 400;
+    font-style: normal
+}
+
+.margins {
+    margin: 0 2%;
+}
+
+.content {
+}
+
+
+.title-h1 {
+    color: var(--primaryColor);
+    font-size: 32px;
+    font-family: inherit;
+    letter-spacing: 0.1em;
+    font-weight: normal;
+}

@@ -23,4 +23,4 @@ Auth::routes();
 // App routes
 Route::view('/home', 'pages.home')->name('home');
 Route::view('/news', 'pages.news')->name('news');
-Route::view('/info', 'pages.info')->name('info');
+Route::view('/info', 'pages.information')->name('info');

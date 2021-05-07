@@ -1,0 +1,20 @@
+.menu {
+    background: var(--backgroundColor);
+    display: inline-flex;
+    color: var(--textColor);
+    border-radius: 4px;
+    padding: 10px;
+    margin-bottom: 32px;
+    font-size: var(--fontSizeMenu);
+    gap: 22px;
+}
+
+.menu__item {
+    font-size: inherit;
+    text-transform: capitalize;
+    cursor: pointer;
+    text-decoration: var(--textColor) underline;
+}
+
+.menu__item-active {
+}
