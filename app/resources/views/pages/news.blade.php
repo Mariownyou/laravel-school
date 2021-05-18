@@ -1,27 +1,49 @@
-@extends('layouts.app')
+@extends('layouts.new')
+
+@section('title')
+    Родителям
+@endsection
 
 @section('content')
-    <div class="bggrey pt40 pb40">
-        <div class="container">
-            <div class="row">
-                <div class="col15-md-11 col15-md-offset-2 news-blocks">
-                    <h1>Наши новости</h1>
-                    <div class="row plr9">
-                        @include('includes.news_post')
-                        @include('includes.news_post')
-                        @include('includes.news_post')
-                        @include('includes.news_post')
-                        @include('includes.news_post')
-                        @include('includes.news_post')
-                        @include('includes.news_post')
-                        @include('includes.news_post')
-                        @include('includes.news_post')
-                        @include('includes.news_post')
-                        @include('includes.news_post')
-                        @include('includes.news_post')
-                    </div>
-                </div>
-            </div>
-        </div>
+    @include('components.admin_panel')
+    <div class="content" id="content">
+        <h1 class="title-h1">Последние Новости</h1>
+        @foreach($posts as $post)
+            @include('components.post', ['post' => $post])
+        @endforeach
     </div>
 @endsection
+
+@push('scripts')
+    <script>
+        const navbar = document.getElementById('navbar');
+        const content = document.getElementById('content');
+
+        function getClassWidth(selector) {
+            let elClass = document.querySelector('.' + selector);
+
+            return parseInt(getComputedStyle(elClass).width);
+        };
+
+        function calcContentPadding(width) {
+            let navbarWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+            console.log(navbarWidth, width);
+            let margin = (navbarWidth - width) / 2;
+            return margin + 185 - 15;
+        };
+
+        function setContentPadding(margin) {
+            content.style.marginLeft = margin + 'px';
+        };
+
+        window.addEventListener('resize', () => {
+            console.log('changed');
+            console.log(calcContentPadding(getClassWidth('navbar--grid')))
+            setContentPadding(calcContentPadding(getClassWidth('navbar--grid')));
+        });
+
+        window.onload = () => {
+            setContentPadding(calcContentPadding(getClassWidth('navbar--grid')));
+        }
+    </script>
+@endpush

@@ -10,6 +10,7 @@
 
 .post__title {
     margin-bottom: 8px;
+    letter-spacing: 1px;
 }
 
 /*.post__avatar {*/
@@ -37,8 +38,27 @@
 }
 
 .post__avatar {
+    z-index: 0;
     position: absolute;
     width: var(--avatarSize);
     border-radius: 50%;
     left: -84px;
+}
+
+.post__actions {
+    position: absolute;
+    top: 0;
+    left: 100%;
+}
+
+.edit-link {
+    cursor: pointer;
+}
+
+.edit-icon {
+    width: 32px;
+}
+
+.edit-icon:hover {
+    fill: var(--primaryColor);
 }
