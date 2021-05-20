@@ -5,7 +5,5 @@
 @endsection
 
 @section('content')
-    <div class="form-wrapper">
-        @include('components.post_form', ['post' => $post])
-    </div>
+    @include('components.post_form', ['post' => $post])
 @endsection

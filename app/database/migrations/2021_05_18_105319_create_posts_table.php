@@ -22,6 +22,7 @@ class CreatePostsTable extends Migration
             $table->integer('class');
             $table->string('type');
             $table->boolean('isParents');
+            $table->integer('views')->default(1);
         });
     }
 

@@ -22,35 +22,4 @@
 @endsection
 
 @push('scripts')
-    <script>
-        const navbar = document.getElementById('navbar');
-        const content = document.getElementById('content');
-
-        function getClassWidth(selector) {
-            let elClass = document.querySelector('.' + selector);
-
-            return parseInt(getComputedStyle(elClass).width);
-        };
-
-        function calcContentPadding(width) {
-            let navbarWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-            console.log(navbarWidth, width);
-            let margin = (navbarWidth - width) / 2;
-            return margin + 185 - 15;
-        };
-
-        function setContentPadding(margin) {
-            content.style.marginLeft = margin + 'px';
-        };
-
-        window.addEventListener('resize', () => {
-            console.log('changed');
-            console.log(calcContentPadding(getClassWidth('navbar--grid')))
-            setContentPadding(calcContentPadding(getClassWidth('navbar--grid')));
-        });
-
-        window.onload = () => {
-            setContentPadding(calcContentPadding(getClassWidth('navbar--grid')));
-        }
-    </script>
 @endpush

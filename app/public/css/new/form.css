@@ -4,7 +4,8 @@
 }
 
 .form {
-
+    grid-column-start: 2;
+    grid-column-end: 3;
 }
 
 .input-big {
@@ -15,7 +16,7 @@
 .textarea {
     font-size: inherit;
     padding: 8px 8px;
-    max-width: 720px;
+    max-width: 1000px;
 }
 
 .form__title {

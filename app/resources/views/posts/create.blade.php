@@ -5,7 +5,5 @@
 @endsection
 
 @section('content')
-    <div class="form-wrapper">
-        @include('components.post_form')
-    </div>
+    @include('components.post_form')
 @endsection

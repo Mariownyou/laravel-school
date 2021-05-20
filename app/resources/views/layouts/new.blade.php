@@ -16,8 +16,8 @@
     @include('includes.navbar.nav-mob')
 </header>
 
-<main>
-    <div class="margins">
+<main class="margins">
+    <div class="page-grid">
         @yield('content')
     </div>
 </main>

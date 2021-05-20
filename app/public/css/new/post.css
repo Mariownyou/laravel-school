@@ -13,6 +13,13 @@
     letter-spacing: 1px;
 }
 
+.post__title-big {
+    margin-bottom: 0px;
+    letter-spacing: 5px;
+    font-size: 48px;
+    font-weight: bold;
+}
+
 /*.post__avatar {*/
 /*    margin: 10px;*/
 /*    grid-row: span 2;*/
@@ -27,7 +34,25 @@
 }
 
 .post__meta {
+    color: rgb(107, 122, 118);
+}
 
+.post__icon {
+    width: 16px;
+    height: 16px;
+    fill: rgb(107, 122, 118);
+    display: inline-block;
+    font-size: 0;
+    line-height: 0;
+    vertical-align: middle;
+    position: relative;
+    top: -1px;
+    text-indent: 0;
+}
+
+.post__icon > * {
+    width: 16px;
+    height: 16px;
 }
 
 .post {
