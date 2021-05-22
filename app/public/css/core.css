@@ -1,0 +1,47 @@
+@import 'variables.css';
+@import 'fonts.css';
+@import "grid.css";
+@import 'news_card.css';
+@import 'post_card.css';
+@import 'navbar.css';
+@import "form.css";
+
+@import "pages/about.css";
+@import "pages/news.css";
+
+body, html {
+    margin: 0;
+    min-height: 100vh;
+    font-family: 'RF Tone', Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.page {
+    display: grid;
+    /*justify-content: center;*/
+    padding: 20px;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
+}
+
+.page-info {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 64px;
+}
+
+.page-info__title {
+    color: var(--primaryColor);
+    font-size: 48px;
+    line-height: 64px;
+    letter-spacing: .1em;
+    font-weight: normal;
+    margin-bottom: 0;
+}
+
+.page-info__text {
+    font-size: 18px;
+    line-height: 24px;
+    max-width: 600px;
+}

@@ -14,18 +14,20 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect()->route('home');
 });
 
 Auth::routes();
 
 
 // App routes
-Route::view('/home', 'pages.home')->name('home');
-Route::view('/info', 'pages.information')->name('info');
-Route::view('/about', 'pages.information')->name('about');
+Route::view('/home', 'pages.news')->name('home');
+Route::view('/about', 'pages.about')->name('about');
 
 Route::resource('posts', 'App\Http\Controllers\PostController');
+
+Route::get('/new', 'App\Http\Controllers\PostController@create')->name('new');
+
 Route::get('/news', 'App\Http\Controllers\PostController@news')->name('news');
 Route::get('/news/{class}', 'App\Http\Controllers\HomeController@news_class')->name('news_class');
 

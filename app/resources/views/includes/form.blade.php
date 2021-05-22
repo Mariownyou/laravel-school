@@ -20,7 +20,7 @@
         <div class="checkbox-group_horizontal">
             <label class="checkbox" for="">
                 <input type="radio" class="checkbox" name="class" value="1"
-                   @if(@$post->class == 1)checked @endif
+                       @if(@$post->class == 1)checked @endif
                 >
                 1
             </label>
@@ -80,14 +80,14 @@
             </label>
             <label class="checkbox" for=""
                    @if(@$post->class == 11)checked @endif
-                >
+            >
                 <input type="radio" class="checkbox" name="class" value="11">
                 11
             </label>
         </div>
     </div>
     <div class="form-control">
-        <div class="form-control__title">Категория</div>
+        <div class="form-control__label">Категория</div>
         <div class="checkbox-group">
             <label class="checkbox">
                 <input type="radio" class="checkbox" name="category" value="info"
@@ -116,7 +116,7 @@
         </div>
     </div>
     <div class="form-control">
-        <div class="form-control__title">Это новость?</div>
+        <div class="form-control__label">Это новость?</div>
         <div class="checkbox-group">
             <label class="checkbox">
                 <input type="radio" class="checkbox" name="news" value="1"
@@ -133,7 +133,7 @@
         </div>
     </div>
     <div class="form-control">
-        <div class="form-control__title">Для кого это?</div>
+        <div class="form-control__label">Для кого это?</div>
         <div class="checkbox-group">
             <label class="checkbox">
                 <input type="radio" class="checkbox" name="parents" value="1"

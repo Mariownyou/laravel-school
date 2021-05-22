@@ -1,0 +1,38 @@
+.nav {
+    margin-bottom: 32px;
+}
+
+.logo {
+    display: flex;
+    justify-self: center;
+    align-self: center;
+    width: 160px;
+}
+
+.nav__links {
+    display: flex;
+    gap: 16px;
+    align-items: flex-end;
+    cursor: pointer;
+}
+
+.links {
+    display: inline-flex;
+    gap: 16px;
+    background: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1' height='1'%3E%3Crect x='0' y='0.5' width='1' height='0.5' fill='rgba(0, 100, 168, 0.2)'/%3E%3C/svg%3E") left bottom repeat-x;
+}
+
+.link {
+    font-size: 16px;
+    text-decoration: none;
+    color: var(--regularTextColor);
+}
+
+.link:hover {
+    border-bottom: 1px solid black;
+}
+
+.link-active {
+    color: var(--activeLinkColor);
+    border-bottom: 1px solid var(--activeLinkColor);
+}

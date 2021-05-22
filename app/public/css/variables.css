@@ -1,0 +1,15 @@
+:root {
+    /* Colors */
+    --primaryColor: #24B7E3;
+    --secondaryColor: #2b7a96;
+    --backgroundColor: #F5F3F3;
+
+    /*  Text Colors  */
+    --regularTextColor: black;
+    --activeLinkColor: var(--primaryColor);
+    --greyText: #686868;
+
+    /*  Background Colors  */
+    --grayBg: #E4E4E4;
+    --primaryBg: #92daef;
+}

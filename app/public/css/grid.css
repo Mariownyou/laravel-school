@@ -1,0 +1,14 @@
+.grid {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 32px;
+}
+
+.grid > .grid__g1 {
+    grid-column-start: 1;
+}
+
+.grid > .grid__g2 {
+    grid-column-start: 2;
+}
+

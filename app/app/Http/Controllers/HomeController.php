@@ -40,7 +40,7 @@ class HomeController extends Controller
             ->where('class', $class)
             ->get();
 
-        return view('posts.index')->with('posts', $posts);
+        return view('pages.index')->with('posts', $posts)->with('title', 'parents');
     }
 
     public function students_class(Request $request, $class)
@@ -50,6 +50,6 @@ class HomeController extends Controller
             ->where('class', $class)
             ->get();
 
-        return view('posts.index')->with('posts', $posts);
+        return view('pages.index')->with('posts', $posts)->with('title', 'students');
     }
 }

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Post;
 use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
 
 class PostController extends Controller
 {
@@ -14,16 +15,17 @@ class PostController extends Controller
      */
     public function index()
     {
-        $posts = Post::orderBy('created_at', 'desc')
-            ->get();
-        return view('posts.index')->with('posts', $posts);
+//        $posts = Post::orderBy('created_at', 'desc')
+//            ->get();
+        $posts = $this->getPosts();
+
+        return view('test.index')->with('posts', $posts);
     }
 
     public function news()
     {
-        $posts = Post::where('isNews', true)
-            ->orderBy('created_at', 'desc')
-            ->get();
+        $posts = $this->getPosts(true);
+
         return view('pages.news')->with('posts', $posts);
     }
 
@@ -32,7 +34,7 @@ class PostController extends Controller
         $posts = Post::where('isParents', true)
             ->orderBy('created_at', 'desc')
             ->get();
-        return view('posts.index')->with('posts', $posts);
+        return view('pages.index')->with('posts', $posts)->with('title', 'parents');
     }
 
     public function students()
@@ -40,7 +42,7 @@ class PostController extends Controller
         $posts = Post::where('isParents', false)
             ->orderBy('created_at', 'desc')
             ->get();
-        return view('posts.index')->with('posts', $posts);
+        return view('pages.index')->with('posts', $posts)->with('title', 'students');
     }
 
     /**
@@ -50,7 +52,7 @@ class PostController extends Controller
      */
     public function create()
     {
-        return view('posts.create');
+        return view('pages.create');
     }
 
     /**
@@ -95,7 +97,7 @@ class PostController extends Controller
         $post->views += 1;
         $post->save();
 
-        return view('posts.show')->with('post', $post);
+        return view('pages.show')->with('post', $post);
     }
 
     /**
@@ -107,7 +109,7 @@ class PostController extends Controller
     public function edit($id)
     {
         $post = Post::find($id);
-        return view('posts.edit')->with('post', $post);
+        return view('pages.edit')->with('post', $post);
     }
 
     /**
@@ -163,5 +165,37 @@ class PostController extends Controller
         $post->type = $request->input('category');
         $post->class = $request->input('class');
         $post->isParents = $request->input('parents');
+    }
+
+    // get ordered Posts
+    private function getPosts($news = false) {
+        if ($news) {
+            $posts = Post::latest()->where('isNews', true)->get()->groupBy(function($item)
+            {
+                $date = $item->created_at;
+                if ($date->isToday()) {
+                    return 'Today';
+                }
+                if ($date == Carbon::yesterday()) {
+                    return 'Yesterday';
+                }
+
+                return $date->format('d M Y');
+            });;
+
+            return $posts;
+        }
+
+        $posts = Post::latest()->get()->groupBy(function($item)
+        {
+            $date = $item->created_at;
+            if ($date == Carbon::now()) {
+                return 'Today';
+            }
+
+            return $date->format('d M Y');
+        });
+
+        return $posts;
     }
 }

@@ -1,0 +1,20 @@
+.news {
+
+}
+
+.day {
+    margin-bottom: 100px;
+}
+
+.day__date {
+    font-size: 36px;
+    line-height: 48px;
+    margin-bottom: 18px;
+    color: var(--secondaryColor);
+}
+
+.day__posts {
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+}

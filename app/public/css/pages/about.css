@@ -1,0 +1,15 @@
+.about {}
+
+.about__title {
+    color: var(--secondaryColor);
+}
+
+.about__text {
+    max-width: 800px;
+    line-height: 1.5em;
+}
+
+.info > p {
+    line-height: 1.2em;
+    margin: 0;
+}
