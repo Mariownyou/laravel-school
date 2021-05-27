@@ -4,7 +4,10 @@
 @import 'news_card.css';
 @import 'post_card.css';
 @import 'navbar.css';
+@import "footer.css";
 @import "form.css";
+@import "q_form.css";
+@import "admin.css";
 
 @import "pages/about.css";
 @import "pages/news.css";
@@ -17,12 +20,23 @@ body, html {
     box-sizing: border-box;
 }
 
-.page {
+.page-wrapper {
+    width: 900px;
     display: grid;
-    /*justify-content: center;*/
-    padding: 20px;
+    padding: 2%;
     grid-template-rows: auto 1fr auto;
     min-height: 100vh;
+}
+
+.page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content {
+
+    width: 100%;
 }
 
 .page-info {

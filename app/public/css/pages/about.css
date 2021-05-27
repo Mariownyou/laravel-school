@@ -1,4 +1,6 @@
-.about {}
+.about {
+    width: 100%;
+}
 
 .about__title {
     color: var(--secondaryColor);

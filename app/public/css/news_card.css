@@ -1,15 +1,29 @@
 .news_card {
     margin-bottom: 0;
+    position: relative;
+}
+
+.edit-button {
+    position: absolute;
+    right: 0;
+}
+
+.edit-icon {
+    width: 36px;
+}
+
+.edit-icon:hover {
+    fill: var(--primaryColor);
 }
 
 .news_card__info {
     display: flex;
-    gap: 10px;
-    margin-bottom: 8px;
+    gap: 8px;
+    margin-bottom: 2px;
 }
 
 .time {
-    font-size: 18px;
+    font-size: 16px;
     line-height: 24px;
     font-weight: 300;
     color: var(--greyText);
@@ -50,8 +64,16 @@
 .news_card__title {
     cursor: pointer;
     font-size: 40px;
+    font-size: 24px;
     line-height: 48px;
+    line-height: 36px;
     display: inline-block;
     font-weight: 500;
     margin: 0;
+}
+
+.news_card__text {
+    font-size: 1.3rem;
+    line-height: 2rem;
+    max-width: 800px;
 }

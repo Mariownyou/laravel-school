@@ -2,7 +2,7 @@
 
 @section('title')
     About Us
-@endsectionc
+@endsection
 
 @section('page-info')
     <div class="page-info">
@@ -27,6 +27,7 @@
             <p>DOBROLUBOVA STR., 13</p>
             <p>SAINT-PETERSBURG,</p>
             <p>RUSSIA</p>
+            <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3Acdf7d7c8ac6bb5c52aecc16d8f1e2aa2f7cb7f0ca85427803fbe2bdf6596841b&amp;source=constructor" width="500" height="400" frameborder="0"></iframe>
         </div>
     </div>
 @endsection

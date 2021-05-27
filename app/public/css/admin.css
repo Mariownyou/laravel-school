@@ -1,0 +1,25 @@
+.admin-buttons {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+    position: absolute;
+    top: 100%;
+}
+
+.admin-button {
+    background: var(--primaryBg);
+    padding: 6px 10px;
+    border-radius: 4px;
+    text-decoration: none;
+    color: black;
+}
+
+.admin-button:hover {
+    background: var(--primaryBgHover);
+}
+
+.admin-button_disabled {
+    pointer-events: none;
+    background: var(--backgroundColor);
+}

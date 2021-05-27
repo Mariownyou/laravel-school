@@ -12,10 +12,18 @@
     max-width: 600px;
 }
 
+.input {
+    font-size: 18px;
+    padding: 6px 8px;
+    max-width: 300px;
+}
+
 .textarea {
     font-size: inherit;
     padding: 8px 8px;
     max-width: 800px;
+    height: 400px;
+    resize: none;
 }
 
 .form__title {
@@ -28,14 +36,30 @@
     margin-bottom: 32px;
 }
 
+.form__title-black {
+    font-size: 24px;
+    font-weight: 500;
+    margin-bottom: 24px;
+}
+
 .form-control {
     display: grid;
     grid-template-columns: 250px 1fr;
     margin-bottom: 40px;
 }
 
+.form-control_end {
+    display: flex;
+    justify-content: flex-end;
+}
+
 .form-control__label {
+    color: rgb(107, 122, 118);
     font-size: 18px;
+}
+
+.form-control__label_centered {
+    align-self: center;
 }
 
 .checkbox-group {
@@ -55,7 +79,8 @@
 
 .submit-button {
     cursor: pointer;
-    float: right;
+    justify-self: flex-end;
+    /*float: right;*/
     padding: 8px 22px;
     background: linear-gradient(180deg, #46C4F4 0%, #35BCEB 100%);
     border-radius: 4px;
@@ -75,7 +100,8 @@ input {
 }
 
 textarea,
-input[type=text] {
+input[type=text],
+input[type=email]{
     outline: none;
     background: var(--backgroundColor);
     font-family: inherit;
@@ -96,6 +122,11 @@ input[type=text]:focus {
     }
 
     .form-control__label {
-        font-weight: 500;
+        font-weight: bold;
+        color: black;
+    }
+
+    .form-control__label_centered {
+        align-self: normal;
     }
 }

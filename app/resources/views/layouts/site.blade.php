@@ -13,24 +13,16 @@
     <title>School “Shamir” — @yield('title')</title>
 </head>
 <body class="page">
+    <div class="page-wrapper">
+        @include('includes.navbar', ['row', @$row])
 
-    <header>
-        @include('includes.navbar')
-    </header>
-
-    <main class="grid">
-        <div class="grid__g2">
+        <main class="content">
             @yield('page-info')
-            <div class="content">
-                @yield('content')
-            </div>
-        </div>
-    </main>
+            @yield('content')
+        </main>
 
-    <footer>
-
-    </footer>
-
+        @include('includes.footer')
+    </div>
     @stack('js')
 </body>
 </html>

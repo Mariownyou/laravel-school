@@ -12,4 +12,7 @@
     /*  Background Colors  */
     --grayBg: #E4E4E4;
     --primaryBg: #92daef;
+    --primaryBgHover: #9fd4ff;
+    --primaryBgDis: #dbdbdb;
+
 }

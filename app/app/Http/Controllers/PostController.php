@@ -37,6 +37,12 @@ class PostController extends Controller
         return view('pages.index')->with('posts', $posts)->with('title', 'parents');
     }
 
+    public function class() {
+        $posts = Post::latest()->get();
+
+        return view('pages.index')->with('posts', $posts)->with('title', 'class');
+    }
+
     public function students()
     {
         $posts = Post::where('isParents', false)

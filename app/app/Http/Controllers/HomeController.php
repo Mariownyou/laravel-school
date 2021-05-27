@@ -52,4 +52,11 @@ class HomeController extends Controller
 
         return view('pages.index')->with('posts', $posts)->with('title', 'students');
     }
+
+    public function sort_by_class(Request $request, $class)
+    {
+        $posts = Post::latest()->where('class', $class)->get();
+
+        return view('pages.index')->with('posts', $posts)->with('class', $class);
+    }
 }

@@ -14,28 +14,27 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return redirect()->route('home');
+    return redirect()->route('news');
 });
 
 Auth::routes();
 
 
 // App routes
-Route::view('/home', 'pages.news')->name('home');
+Route::redirect('/home', 'news');
 Route::view('/about', 'pages.about')->name('about');
 
 Route::resource('posts', 'App\Http\Controllers\PostController');
+Route::resource('questions', 'App\Http\Controllers\Questions');
 
 Route::get('/new', 'App\Http\Controllers\PostController@create')->name('new');
+Route::get('/questions/{id}/answer', 'App\Http\Controllers\Questions@answer')->name('answer');
+Route::post('/questions/{id}/answer', 'App\Http\Controllers\Questions@answer_store')->name('answer.store');
+Route::put('/questions/{id}/answer', 'App\Http\Controllers\Questions@answer_update')->name('answer.update');
 
 Route::get('/news', 'App\Http\Controllers\PostController@news')->name('news');
 Route::get('/news/{class}', 'App\Http\Controllers\HomeController@news_class')->name('news_class');
 
-Route::get('/parents', 'App\Http\Controllers\PostController@parents')->name('parents');
-Route::get('/parents/{class}', 'App\Http\Controllers\HomeController@parents_class')->name('parents_class');
-
-
-Route::get('/students', 'App\Http\Controllers\PostController@students')->name('students');
-Route::get('/students/{class}', 'App\Http\Controllers\HomeController@students_class')->name('students_class');
-
+Route::get('/class', 'App\Http\Controllers\PostController@class')->name('class');
+Route::get('/class/{class}', 'App\Http\Controllers\HomeController@sort_by_class')->name('classes');
 

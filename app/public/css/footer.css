@@ -1,0 +1,28 @@
+.footer {
+    margin-top: 36px;
+}
+
+.footer__cp {
+    margin-bottom: 0px;
+}
+
+.footer > .links {
+    margin-bottom: 24px;
+    font-size: 16px;
+}
+
+.footer__info {
+    /*display: inline-flex;*/
+    /*flex-direction: column;*/
+    /*gap: 16px;*/
+}
+
+.e2-svgi {
+}
+
+.e2-svgi > svg {
+    width: 16px;
+    fill: var(--primaryColor);
+}
+
+

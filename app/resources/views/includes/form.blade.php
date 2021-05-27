@@ -6,9 +6,16 @@
     @endif
 
     @csrf
-    <div class="form__title">Новая Публикация</div>
+
+
+    @if(@$post)
+        <div class="form__title">Редактирование Публикации</div>
+    @else
+        <div class="form__title">Новая Публикация</div>
+    @endif
+
     <div class="form-control">
-        <div class="form-control__label">Заголовок</div>
+        <div class="form-control__label form-control__label_centered">Заголовок</div>
         <input type="text" class="input-big" name="title" value="{{ @$post->title }}">
     </div>
     <div class="form-control">
@@ -149,9 +156,12 @@
             </label>
         </div>
     </div>
-    <button class="submit-button" type="submit">
-        {{ @$post ? 'Обновить' : 'Опубликовать' }}
-    </button>
+    <div class="form-control_end">
+        <button class="submit-button" type="submit">
+            {{ @$post ? 'Обновить' : 'Опубликовать' }}
+        </button>
+    </div>
+
     @if ($errors->any())
         <div class="alert alert-danger">
             <ul>
